@@ -1,4 +1,4 @@
-module github.com/CrackedPoly/AES-implementation-in-Golang
+module github.com/twink7e/AES-go
 
 go 1.16
 

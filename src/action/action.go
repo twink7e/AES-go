@@ -4,10 +4,10 @@ import (
 	"context"
 	"errors"
 	"flag"
-	"github.com/CrackedPoly/AES-implementation-in-Golang/src/aes"
-	"github.com/CrackedPoly/AES-implementation-in-Golang/src/utils"
 	"github.com/otokaze/go-kit/log"
 	"github.com/peterh/liner"
+	"github.com/twink7e/AES-go/src/aes"
+	"github.com/twink7e/AES-go/src/utils"
 	"github.com/urfave/cli/v2"
 	"strings"
 )

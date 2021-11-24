@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
-	"github.com/CrackedPoly/AES-implementation-in-Golang/src/utils"
+	"github.com/twink7e/AES-go/src/utils"
 	"math"
 	"math/big"
 	"reflect"
@@ -121,7 +121,7 @@ func (a *AES) keyExpansion() []uint32 {
 		w = append(w, w[i-a.nk]^binary.BigEndian.Uint32(tempW))
 	}
 
-	utils.DumpWords("keyExpansion:", w)
+	// utils.DumpWords("keyExpansion:", w)
 	return w
 }
 
@@ -133,7 +133,7 @@ func (a *AES) EncryptECB(in []byte, pad utils.PaddingFunc) []byte {
 		a.encryptBlock(in[i:i+a.len], a.roundKeys)
 	}
 
-	fmt.Printf("aes_impl-%d ECB encrypted cipher:", a.nk*32)
+	//fmt.Printf("aes_impl-%d ECB encrypted cipher:", a.nk*32)
 	utils.DumpBytes("", in)
 	return in
 }
@@ -145,7 +145,7 @@ func (a *AES) DecryptECB(in []byte, unpad utils.UnpaddingFunc) []byte {
 	}
 
 	in = unpad(in)
-	fmt.Printf("aes_impl-%d ECB decrypted plaintext:", a.nk*32)
+	//fmt.Printf("aes_impl-%d ECB decrypted plaintext:", a.nk*32)
 	utils.DumpBytes("", in)
 	return in
 }
@@ -163,7 +163,7 @@ func (a *AES) EncryptCBC(in []byte, iv []byte, pad utils.PaddingFunc) []byte {
 		copy(ivTmp, in[i:i+a.len])
 	}
 
-	fmt.Printf("aes_impl-%d CBC encrypted cipher:", a.nk*32)
+	//fmt.Printf("aes_impl-%d CBC encrypted cipher:", a.nk*32)
 	utils.DumpBytes("", in)
 	return in
 }
@@ -183,7 +183,7 @@ func (a *AES) DecryptCBC(in []byte, iv []byte, unpad utils.UnpaddingFunc) []byte
 	}
 
 	in = unpad(in)
-	fmt.Printf("aes_impl-%d CBC decrypted plaintext:", a.nk*32)
+	//fmt.Printf("aes_impl-%d CBC decrypted plaintext:", a.nk*32)
 	utils.DumpBytes("", in)
 	return in
 }

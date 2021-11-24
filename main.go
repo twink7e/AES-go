@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/CrackedPoly/AES-implementation-in-Golang/src/action"
+	"github.com/twink7e/AES-go/src/action"
 	"github.com/urfave/cli/v2"
 	"log"
 	"os"

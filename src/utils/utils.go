@@ -68,6 +68,7 @@ func DumpWords(note string, in []uint32) {
 }
 
 func DumpBytes(note string, in []byte) {
+	return
 	fmt.Printf("%s", note)
 	for i, v := range in {
 		if i%16 == 0 {
